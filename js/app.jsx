@@ -27,7 +27,7 @@ ConfigUtils.setLocalConfigurationFile('MapStore2/web/client/localConfig.json');
  *
  * const appConfig = require('./appConfig');
  *
- * Or override the application configuration file with (e.g. only one page with a mapviewer):
+ * Or override the application configuration file with (e.g. only one page with a map viewer):
  *
  * const appConfig = assign({}, require('@mapstore/product/appConfig'), {
  *     pages: [{
@@ -40,10 +40,26 @@ ConfigUtils.setLocalConfigurationFile('MapStore2/web/client/localConfig.json');
 const appConfig = require('@mapstore/product/appConfig');
 
 /**
- * Define a custom list of plugins with:
- *
- * const plugins = require('./plugins');
+ * Add custom plugins to default ones.
+ * Here import mapstore plugins directly.
+ * For optimization, do not import unused plugins
  */
 const plugins = require('@mapstore/product/plugins');
 
-require('@mapstore/product/main')(appConfig, plugins);
+// Sample plugins
+const Minimal = require('./plugins/Minimal').default;
+const SampleAbout = require('./plugins/SampleAbout').default;
+
+const appPlugins = {
+    plugins: {
+        ...plugins.plugins,
+        // custom plugins:
+        // MinimalPlugin, that has the minimal skeleton of a starter plugin
+        MinimalPlugin: Minimal,
+        // SampleAbout is a minimal plugin with a dialog that can be opened from the burger menu
+        SampleAbout: SampleAbout
+
+    },
+    requires: plugins.requires
+};
+require('@mapstore/product/main')(appConfig, appPlugins);
