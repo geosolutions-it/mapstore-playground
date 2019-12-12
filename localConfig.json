@@ -264,7 +264,7 @@
             },
             "FeedbackMask"
         ],
-        "desktop": [ "SampleAbout",
+        "desktop": [ "SampleAbout", "Playground",
           {
             "name": "Map",
             "cfg": {
