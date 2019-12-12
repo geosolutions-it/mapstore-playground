@@ -12,12 +12,12 @@ import { Glyphicon } from 'react-bootstrap';
 /**
  * The effective dialog.
  */
-const ContainerDialog = ({ enabled, floatingStyle, modal, draggable, onClose, children }) => <Dialog
+const ContainerDialog = ({ title = "Dialog", enabled, floatingStyle, modal, draggable, onClose, children }) => <Dialog
     style={{ zIndex: 1992, display: enabled ? "block" : "none", ...floatingStyle }}
     modal={modal}
     draggable={draggable}>
     <span role="header">
-        <span className="settings-panel-title">About</span>
+        <span className="settings-panel-title">{title}</span>
         <button onClick={onClose} className="settings-panel-close close"><Glyphicon glyph="1-close" /></button>
     </span>
     <div role="body">

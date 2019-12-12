@@ -16,7 +16,7 @@ const Dialog = createSampleDialog(CONTROL_NAME);
 import { createPlugin } from '@mapstore/utils/PluginsUtils';
 
 // HERE YOUR ROOT PLUGIN COMPONENT
-const Playground = ({text}) => (<Dialog floating>
+const Playground = ({text}) => (<Dialog floating title="Playground">
     <div><b>Write your plugin content here</b></div>
     <div>Here some sample data from the plugins state: {text}</div>
 </Dialog>);
