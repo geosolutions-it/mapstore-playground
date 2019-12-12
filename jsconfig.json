@@ -13,7 +13,7 @@
         }
     },
     "include": [
-        "MapStore2/web/client",
-        "js"
+        "MapStore2/web/client/**",
+        "js/**"
     ]
 }
