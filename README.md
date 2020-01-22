@@ -1,7 +1,7 @@
 A sample mapstore project
 =========================
 
-This is a sample MapStore project ready to work, with some examples and exercises. An good way to start playing with MapStore friendly. 
+This is a sample MapStore project ready to use, with some examples and exercises. An good way to start playing with MapStore friendly. 
 
 
 Quick Start
