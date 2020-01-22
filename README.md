@@ -28,7 +28,7 @@ The application runs at `http://localhost:8081` afterwards.
 *notes*: 
 To simplify as much as possible the first running set-up the application is connected the back-end service available at https://dev.geo-solutions.it/mapstore/. 
 
-If you are experiencing some problems running the application check if the default back-end services are running. 
+If you are experiencing some problems running the application please check if the default back-end services are running. 
 
 If you have more problems, you can [open an issue](https://github.com/geosolutions-it/mapstore-playground/issues/new)
 
