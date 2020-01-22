@@ -1,5 +1,8 @@
 A sample mapstore project
-==========
+=========================
+
+This is a sample MapStore project ready to work, with some examples and exercises. An good way to start playing with MapStore friendly. 
+
 
 Quick Start
 ------------
@@ -18,4 +21,7 @@ Start the development application locally:
 
 The application runs at `http://localhost:8081` afterwards.
 
-Read more on the [wiki](http://github.com/geosolutions-it/mapstore-playground/wiki).
+Playing with it
+---------------
+
+Read more about sample plugins and how to create new plugins on the [wiki](http://github.com/geosolutions-it/mapstore-playground/wiki).
