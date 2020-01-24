@@ -20,7 +20,7 @@ ConfigUtils.setConfigProp('themePrefix', 'mapstore-playground');
  *
  * ConfigUtils.setLocalConfigurationFile('localConfig.json');
  */
-//ConfigUtils.setLocalConfigurationFile('MapStore2/web/client/localConfig.json');
+// ConfigUtils.setLocalConfigurationFile('MapStore2/web/client/localConfig.json');
 ConfigUtils.setLocalConfigurationFile('localConfig.json');
 
 /**
@@ -50,7 +50,7 @@ const plugins = require('@mapstore/product/plugins');
 // Sample plugins
 const Minimal = require('./plugins/Minimal').default;
 const SampleAbout = require('./plugins/SampleAbout').default;
-
+const Playground = require('./plugins/Playground').default;
 const appPlugins = {
     plugins: {
         ...plugins.plugins,
@@ -58,8 +58,9 @@ const appPlugins = {
         // MinimalPlugin, that has the minimal skeleton of a starter plugin
         MinimalPlugin: Minimal,
         // SampleAbout is a minimal plugin with a dialog that can be opened from the burger menu
-        SampleAbout: SampleAbout
-
+        SampleAbout: SampleAbout,
+        // Playground is an empty template plugin with reducer, ready for exercise.
+        PlaygroundPlugin: Playground
     },
     requires: plugins.requires
 };
