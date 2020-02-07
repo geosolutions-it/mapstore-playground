@@ -49,7 +49,7 @@ export default createPlugin("Playground", {
     component: ConnectedPlugin,
     containers: {
         BurgerMenu: {
-            name: 'about',
+            name: 'playground',
             position: 1500,
             text: "Playground plugin",
             icon: <Glyphicon glyph="heart" />,

@@ -264,7 +264,7 @@
             },
             "FeedbackMask"
         ],
-        "desktop": [ "SampleAbout", "Playground",
+        "desktop": [ "SampleAbout", "Playground", "ZoomToArea",
           {
             "name": "Map",
             "cfg": {
