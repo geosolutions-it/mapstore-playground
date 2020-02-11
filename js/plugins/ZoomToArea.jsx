@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import { connect } from 'react-redux';
 import reducer from '../reducers/zoomtoarea';
 import { zoomToExtent } from '../../MapStore2/web/client/actions/map.js';
@@ -9,15 +9,33 @@ import { Glyphicon } from 'react-bootstrap';
 const CONTROL_NAME = "zoom_to_area_dialog";
 
 const Dialog = createSampleDialog(CONTROL_NAME);
+const styles = {
+    wrap: {
+        margin: '0 auto',
+        display: 'block',
+        textAlign: 'center'
+    },
+    select: {
+        margin: '30px'
+    }
+};
 
-
-const ZoomToArea = ({ zoomToExtentArea }) => (<Dialog id={CONTROL_NAME} floating title="Zoom To Area">
-    <div>
-        <button className="btn btn-primary" onClick={() => zoomToExtentArea([51.2867602, 51.6918741, -0.5103751, 0.3340155], 'EPSG:4326')}>Zoom to London</button>
-    </div>
-
-</Dialog>);
-
+const ZoomToArea = ({ zoomToExtentArea }) => {
+    const [isEnabled, toggleEnable] = useState(false);
+    const [extent, setExtent] = useState('');
+    return (<Dialog id={CONTROL_NAME} floating title="Zoom To Area">
+        <div style={styles.wrap}>
+            <select style={styles.select} onChange={(e) => {
+                toggleEnable(e.target.value.length > 0 ? true : false);
+                setExtent(JSON.parse(e.target.value));
+            }}>
+                <option value="">Choose...</option>
+                <option value="[51.2867602, 51.6918741, -0.5103751, 0.3340155]">London</option>
+            </select>
+            <button className="btn btn-primary" disabled={!isEnabled} onClick={() => zoomToExtentArea(extent, 'EPSG:4326', 10)}>Zoom</button>
+        </div>
+    </Dialog>);
+};
 
 const mapStateToProps = state => ({
     extent: state.zoomtoarea.extent,
@@ -25,7 +43,6 @@ const mapStateToProps = state => ({
     zoom: state.zoomtoarea.zoom
 });
 
-// const mapDispatchToProps = () => zoomToExtent([51.2867602, 51.6918741, -0.5103751, 0.3340155], 'EPSG:4326');
 const mapDispatchToProps = dispatch => ({
     zoomToExtentArea: (extent, crs, zoom) => dispatch(zoomToExtent(extent, crs, zoom))
 });

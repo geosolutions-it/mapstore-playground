@@ -1,7 +1,13 @@
 const { ZOOM_TO_EXTENT } = require('../../MapStore2/web/client/actions/map');
 
+const INITIAL_STATE = {
+    extent: null,
+    crs: null,
+    maxZoom: null
+};
 
-function zoomtoarea(state = { extent: null, crs: null, maxZoom: null }, action) {
+
+function zoomtoarea(state = INITIAL_STATE, action) {
     switch (action.type) {
     case ZOOM_TO_EXTENT:
         return Object.assign({}, state,  {
