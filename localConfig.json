@@ -264,7 +264,28 @@
             },
             "FeedbackMask"
         ],
-        "desktop": [ "SampleAbout", "Playground", "ZoomToArea",
+        "desktop": [ "SampleAbout", "Playground",
+          {
+            "name": "ZoomToArea",
+            "cfg": {
+              "citiesExtent": [
+                {
+                  "city": "London",
+                  "extent": "[-5.361328,49.752880,5.103149,53.199452]"
+                },
+                {
+                  "city": "Paris",
+                  "extent": "[-2.883911,46.998988,7.580566,50.642494]"
+                },
+                {
+                  "city": "Waimea",
+                  "extent": "[-156.321030,19.693021,-155.012970,20.343339]"
+                }
+              ],
+              "crs": "EPSG:4326",
+              "maxZoom": 10
+            }
+          },
           {
             "name": "Map",
             "cfg": {
