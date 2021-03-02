@@ -51,6 +51,7 @@ const plugins = require('@mapstore/product/plugins');
 const Minimal = require('./plugins/Minimal').default;
 const SampleAbout = require('./plugins/SampleAbout').default;
 const Playground = require('./plugins/Playground').default;
+const ZoomToArea = require('./plugins/ZoomToArea').default;
 const appPlugins = {
     plugins: {
         ...plugins.plugins,
@@ -60,7 +61,8 @@ const appPlugins = {
         // SampleAbout is a minimal plugin with a dialog that can be opened from the burger menu
         SampleAbout: SampleAbout,
         // Playground is an empty template plugin with reducer, ready for exercise.
-        PlaygroundPlugin: Playground
+        PlaygroundPlugin: Playground,
+        ZoomToAreaPlugin: ZoomToArea
     },
     requires: plugins.requires
 };
